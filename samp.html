@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block body %}
+<img src="css/bg.jpg"
+<h1> TO DO APP</h1>
+<br><br>
+<!--<form action="/" method="post">-->
+<!--    <label> enter your name</label><input  id="name" name="name" type="text"><br><br><br>-->
+<!--    <label>enter your task</label> <input  id="task" name="task" type="task"><br><br>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+    <div class="content-section">
+        <fieldset>
+        <form method="POST" action="">
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+                     {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            <div class="form-group">
+                    {{ form.task.label(class="form-control-label") }}
+                 {% if form.task.errors %}
+                        {{ form.task(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-task">
+                            {% for error in form.task.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.task(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form><br><br><br><br>
+<!--            {% if xx!=0 %}-->
+<!--                <h1> TASKS FOR {{ l[0] }}</h1>-->
+<!--                {{ l[1] }}<br>-->
+<!--            {% endif %}-->
+        </fieldset>
+
+    </div>
+    <form>
+        <a href="display">view tasks</a>
+    </form>
+<!--<h1> FOR PRANAV</h1>-->
+<!--    {% for g in pranav %}-->
+<!--    {{ g }}-->
+<!--    {% endfor %}-->
+<!--    <h1> FOR SACHIN </h1>-->
+<!--     {% for g in sachin %}-->
+<!--    {{ g }}-->
+<!--    {% endfor %}-->
+
+{% endblock  %}
