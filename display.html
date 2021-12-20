@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+{% block head %}
+<h1> TASKS</h1>
+{% endblock %}
+{% block body %}
+
+<style>
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid cyan;
+  padding: 50px;
+  margin: 20px;
+}
+#help{
+background_color:red;
+width:150px;
+border: 10px solid red;
+padding:30px;
+margin:10px;
+}
+#s{
+color:black;
+}
+#y{
+color:black;
+}
+
+
+</style>
+    <div>
+    {% for key,value in dictt.items() %}
+
+        <h1> {{ key }}'s pending tasks are :</h1>
+
+        <div id="help">
+        {% for x in value %}
+
+
+            <ul>
+                <h1> <li> {{ x }} </li> </h1>
+            </ul>
+
+        {% endfor %}
+
+        <a  id="s" href="update.html">UPDATE TASKS</a><br><br>
+            <a  id ="y" href ="delete.html">DELETE TASKS</a><br>
+    </div>
+        <br><br>
+    {% endfor %}
+    </div>
+{% endblock %}
